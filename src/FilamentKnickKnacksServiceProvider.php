@@ -34,7 +34,7 @@ class FilamentKnickKnacksServiceProvider extends PluginServiceProvider
             ? ['plugin-filament-knick-knacks' => __DIR__.'/../resources/dist/filament-knick-knacks.js']
             : [];
     }
-    
+
     // protected array $beforeCoreScripts = [
     //     'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.js',
     // ];
