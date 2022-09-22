@@ -21,13 +21,19 @@ class FilamentKnickKnacksServiceProvider extends PluginServiceProvider
         // CustomWidget::class,
     ];
 
-    protected array $styles = [
-        'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.css',
-    ];
+    protected function getStyles(): array
+    {
+        return config('filament-knick-knacks.load_assets.styles')
+            ? ['plugin-filament-knick-knacks' => __DIR__.'/../resources/dist/filament-knick-knacks.css']
+            : [];
+    }
 
-    protected array $scripts = [
-        'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.js',
-    ];
+    protected function getScripts(): array
+    {
+        return config('filament-knick-knacks.load_assets.scripts')
+            ? ['plugin-filament-knick-knacks' => __DIR__.'/../resources/dist/filament-knick-knacks.js']
+            : [];
+    }
 
     // protected array $beforeCoreScripts = [
     //     'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.js',
@@ -35,6 +41,8 @@ class FilamentKnickKnacksServiceProvider extends PluginServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        $package->name(static::$name);
+        $package->name(static::$name)
+            ->hasConfigFile()
+            ->hasViews();
     }
 }
