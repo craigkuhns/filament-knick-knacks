@@ -22,11 +22,11 @@ class FilamentKnickKnacksServiceProvider extends PluginServiceProvider
     ];
 
     protected array $styles = [
-        'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.css',
+        'plugin-filament-knick-knacks' => __DIR__.'/../resources/dist/filament-knick-knacks.css',
     ];
 
     protected array $scripts = [
-        'plugin-filament-knick-knacks' => __DIR__ . '/../resources/dist/filament-knick-knacks.js',
+        'plugin-filament-knick-knacks' => __DIR__.'/../resources/dist/filament-knick-knacks.js',
     ];
 
     // protected array $beforeCoreScripts = [

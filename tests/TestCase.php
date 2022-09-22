@@ -4,9 +4,9 @@ namespace Kraghammer\FilamentKnickKnacks\Tests;
 
 use Filament\FilamentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Kraghammer\FilamentKnickKnacks\FilamentKnickKnacksServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Kraghammer\FilamentKnickKnacks\FilamentKnickKnacksServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Kraghammer\\FilamentKnickKnacks\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Kraghammer\\FilamentKnickKnacks\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
